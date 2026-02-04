@@ -1,0 +1,30 @@
+# =========================
+# Large data & assets
+# =========================
+/data/
+/static/
+images/
+images_filtered/
+temp_*/
+*.jpg
+*.png
+*.npy
+
+# =========================
+# Model / embeddings
+# =========================
+clip_pokemon_*.npy
+humanized_pokemon_*.npy
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# OS
+.DS_Store

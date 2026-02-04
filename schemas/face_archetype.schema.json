@@ -1,0 +1,171 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "FaceArchetype",
+    "type": "object",
+    "required": [
+      "global",
+      "eyes",
+      "mouth",
+      "nose_proxy",
+      "anchors",
+      "overall"
+    ],
+  
+    "properties": {
+      "global": {
+        "type": "object",
+        "required": [
+          "head_shape",
+          "aspect_ratio",
+          "jaw_definition",
+          "chin_shape",
+          "midface_fullness",
+          "feature_density"
+        ],
+        "properties": {
+          "head_shape": {
+            "enum": ["round", "oval", "long", "square", "triangular", "inverted-triangle"]
+          },
+          "aspect_ratio": {
+            "enum": ["wide", "balanced", "tall"]
+          },
+          "jaw_definition": {
+            "enum": ["soft", "medium", "strong"]
+          },
+          "chin_shape": {
+            "enum": ["rounded", "flat", "pointed"]
+          },
+          "midface_fullness": {
+            "enum": ["low", "medium", "high"]
+          },
+          "feature_density": {
+            "enum": ["sparse", "balanced", "dense"]
+          }
+        }
+      },
+  
+      "eyes": {
+        "type": "object",
+        "required": [
+          "eye_size",
+          "eye_shape",
+          "eye_tilt",
+          "eye_spacing",
+          "eye_height",
+          "upper_lid_weight",
+          "iris_dominance",
+          "eye_contrast",
+          "gaze_impression",
+          "eye_signature"
+        ],
+        "properties": {
+          "eye_size": { "enum": ["small", "medium", "large"] },
+          "eye_shape": { "enum": ["round", "almond", "narrow", "triangular"] },
+          "eye_tilt": { "enum": ["upturned", "neutral", "downturned"] },
+          "eye_spacing": { "enum": ["narrow", "medium", "wide"] },
+          "eye_height": { "enum": ["high-set", "mid-set", "low-set"] },
+          "upper_lid_weight": { "enum": ["light", "medium", "heavy"] },
+          "iris_dominance": { "enum": ["low", "medium", "high"] },
+          "eye_contrast": { "enum": ["low", "high"] },
+          "gaze_impression": {
+            "enum": ["focused", "blank", "sharp", "gentle"]
+          },
+          "eye_signature": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      },
+  
+      "mouth": {
+        "type": "object",
+        "required": [
+          "mouth_size",
+          "mouth_position",
+          "mouth_curve",
+          "mouth_openness",
+          "lip_definition",
+          "smile_signal",
+          "mouth_signature"
+        ],
+        "properties": {
+          "mouth_size": {
+            "enum": ["tiny", "small", "medium", "wide"]
+          },
+          "mouth_position": {
+            "enum": ["high", "mid", "low"]
+          },
+          "mouth_curve": {
+            "enum": ["upturned", "neutral", "downturned"]
+          },
+          "mouth_openness": {
+            "enum": ["closed", "slightly-open", "open"]
+          },
+          "lip_definition": {
+            "enum": ["low", "medium", "high"]
+          },
+          "smile_signal": {
+            "enum": ["none", "subtle", "strong"]
+          },
+          "mouth_signature": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      },
+  
+      "nose_proxy": {
+        "type": "object",
+        "required": [
+          "nose_presence",
+          "midface_projection",
+          "snout_shape"
+        ],
+        "properties": {
+          "nose_presence": {
+            "enum": ["none", "subtle", "clear"]
+          },
+          "midface_projection": {
+            "enum": ["flat", "medium", "protruding"]
+          },
+          "snout_shape": {
+            "enum": ["rounded", "pointed", "beak-like", "none"]
+          },
+          "nose_signature": {
+            "type": "string"
+          }
+        }
+      },
+  
+      "anchors": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 3,
+        "items": {
+          "type": "string",
+          "minLength": 5
+        }
+      },
+  
+      "overall": {
+        "type": "object",
+        "required": [
+          "overall_tension",
+          "overall_age_ratio",
+          "overall_style"
+        ],
+        "properties": {
+          "overall_tension": {
+            "enum": ["relaxed", "neutral", "tense"]
+          },
+          "overall_age_ratio": {
+            "enum": ["baby-like", "balanced", "mature"]
+          },
+          "overall_style": {
+            "enum": ["soft-lines", "sharp-lines", "minimal-features"]
+          }
+        }
+      }
+    }
+  }
+  

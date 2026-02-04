@@ -1,0 +1,4 @@
+eye_distance: wide
+eye_position: normal
+face_length: long
+jaw_width: narrow

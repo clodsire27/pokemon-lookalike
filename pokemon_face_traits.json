@@ -1,0 +1,1487 @@
+{
+  "pokemon": {
+    "geom_vector": {
+      "face_ratio": 0.031341552734375,
+      "eye_distance": 0.0259552001953125,
+      "eye_size": 0.0477294921875,
+      "jaw_width": 0.0416259765625,
+      "complexity": 0.1630859375
+    }
+  },
+  "가디": {
+    "geom_vector": {
+      "face_ratio": 0.00858306884765625,
+      "eye_distance": -0.12152099609375,
+      "eye_size": -0.021881103515625,
+      "jaw_width": 0.016448974609375,
+      "complexity": 0.65185546875
+    }
+  },
+  "가이오가": {
+    "geom_vector": {
+      "face_ratio": -0.1463623046875,
+      "eye_distance": 0.0037860870361328125,
+      "eye_size": 0.113525390625,
+      "jaw_width": 0.0938720703125,
+      "complexity": 0.99072265625
+    }
+  },
+  "가재군": {
+    "geom_vector": {
+      "face_ratio": -0.1358642578125,
+      "eye_distance": -0.05621337890625,
+      "eye_size": 0.09075927734375,
+      "jaw_width": -0.0369873046875,
+      "complexity": 0.81787109375
+    }
+  },
+  "갈모매": {
+    "geom_vector": {
+      "face_ratio": -0.06689453125,
+      "eye_distance": 0.0716552734375,
+      "eye_size": -0.09539794921875,
+      "jaw_width": -0.09417724609375,
+      "complexity": 1.271484375
+    }
+  },
+  "개구마르": {
+    "geom_vector": {
+      "face_ratio": 0.06939697265625,
+      "eye_distance": -0.02288818359375,
+      "eye_size": 0.022613525390625,
+      "jaw_width": 0.057098388671875,
+      "complexity": 0.810546875
+    }
+  },
+  "게을로": {
+    "geom_vector": {
+      "face_ratio": -0.006473541259765625,
+      "eye_distance": -0.1282958984375,
+      "eye_size": -0.0537109375,
+      "jaw_width": -0.1199951171875,
+      "complexity": 0.86083984375
+    }
+  },
+  "고라파덕": {
+    "geom_vector": {
+      "face_ratio": -0.02294921875,
+      "eye_distance": 0.074462890625,
+      "eye_size": -0.047454833984375,
+      "jaw_width": -0.1229248046875,
+      "complexity": 0.97412109375
+    }
+  },
+  "고오스": {
+    "geom_vector": {
+      "face_ratio": 0.053924560546875,
+      "eye_distance": 0.126220703125,
+      "eye_size": 0.04345703125,
+      "jaw_width": -0.04620361328125,
+      "complexity": 1.275390625
+    }
+  },
+  "구구": {
+    "geom_vector": {
+      "face_ratio": 0.0654296875,
+      "eye_distance": 0.03814697265625,
+      "eye_size": -0.0225982666015625,
+      "jaw_width": -0.08056640625,
+      "complexity": 1.1552734375
+    }
+  },
+  "귀뚤뚜기": {
+    "geom_vector": {
+      "face_ratio": 0.100341796875,
+      "eye_distance": -0.0173492431640625,
+      "eye_size": 0.0284881591796875,
+      "jaw_width": 0.01447296142578125,
+      "complexity": 0.767578125
+    }
+  },
+  "그란돈": {
+    "geom_vector": {
+      "face_ratio": -0.111572265625,
+      "eye_distance": -0.039093017578125,
+      "eye_size": -0.056060791015625,
+      "jaw_width": 0.0709228515625,
+      "complexity": 0.70263671875
+    }
+  },
+  "글라이거": {
+    "geom_vector": {
+      "face_ratio": 0.055267333984375,
+      "eye_distance": 0.024993896484375,
+      "eye_size": 0.08099365234375,
+      "jaw_width": 0.017730712890625,
+      "complexity": 0.62744140625
+    }
+  },
+  "기라티나": {
+    "geom_vector": {
+      "face_ratio": -0.192138671875,
+      "eye_distance": 0.039306640625,
+      "eye_size": -0.182373046875,
+      "jaw_width": 0.0272064208984375,
+      "complexity": 0.89208984375
+    }
+  },
+  "깜지곰": {
+    "geom_vector": {
+      "face_ratio": 0.2337646484375,
+      "eye_distance": 0.03680419921875,
+      "eye_size": 0.0655517578125,
+      "jaw_width": -0.052459716796875,
+      "complexity": 1.1787109375
+    }
+  },
+  "꼬렛": {
+    "geom_vector": {
+      "face_ratio": 0.053070068359375,
+      "eye_distance": -0.10137939453125,
+      "eye_size": 0.09320068359375,
+      "jaw_width": -0.0002982616424560547,
+      "complexity": 0.8115234375
+    }
+  },
+  "꼬리선": {
+    "geom_vector": {
+      "face_ratio": -0.06451416015625,
+      "eye_distance": 0.051513671875,
+      "eye_size": -0.1243896484375,
+      "jaw_width": -0.04852294921875,
+      "complexity": 0.82373046875
+    }
+  },
+  "꼬마돌": {
+    "geom_vector": {
+      "face_ratio": 0.02093505859375,
+      "eye_distance": -0.001232147216796875,
+      "eye_size": -0.058563232421875,
+      "jaw_width": -0.1524658203125,
+      "complexity": 0.90625
+    }
+  },
+  "꼬부기": {
+    "geom_vector": {
+      "face_ratio": -0.06561279296875,
+      "eye_distance": -0.037322998046875,
+      "eye_size": -0.00350189208984375,
+      "jaw_width": -0.022003173828125,
+      "complexity": 0.8740234375
+    }
+  },
+  "꾸왁스": {
+    "geom_vector": {
+      "face_ratio": 0.044097900390625,
+      "eye_distance": 0.16552734375,
+      "eye_size": 0.020233154296875,
+      "jaw_width": 0.115966796875,
+      "complexity": 1.0380859375
+    }
+  },
+  "나룸퍼프": {
+    "geom_vector": {
+      "face_ratio": 0.1007080078125,
+      "eye_distance": -0.001018524169921875,
+      "eye_size": -0.10687255859375,
+      "jaw_width": -0.179443359375,
+      "complexity": 1.46484375
+    }
+  },
+  "나몰빼미": {
+    "geom_vector": {
+      "face_ratio": -0.03472900390625,
+      "eye_distance": -0.1156005859375,
+      "eye_size": -0.07012939453125,
+      "jaw_width": -0.2108154296875,
+      "complexity": 0.98486328125
+    }
+  },
+  "나무지기": {
+    "geom_vector": {
+      "face_ratio": 0.057769775390625,
+      "eye_distance": 0.028228759765625,
+      "eye_size": -0.2391357421875,
+      "jaw_width": 0.0100555419921875,
+      "complexity": 1.1337890625
+    }
+  },
+  "나오하": {
+    "geom_vector": {
+      "face_ratio": 0.0595703125,
+      "eye_distance": -0.21533203125,
+      "eye_size": -0.2412109375,
+      "jaw_width": -0.1402587890625,
+      "complexity": 1.5537109375
+    }
+  },
+  "나옹": {
+    "geom_vector": {
+      "face_ratio": 0.09600830078125,
+      "eye_distance": -0.060791015625,
+      "eye_size": -0.063720703125,
+      "jaw_width": -0.047210693359375,
+      "complexity": 1.111328125
+    }
+  },
+  "냐스퍼": {
+    "geom_vector": {
+      "face_ratio": -0.08074951171875,
+      "eye_distance": -0.07568359375,
+      "eye_size": -0.07208251953125,
+      "jaw_width": -0.012237548828125,
+      "complexity": 1.05859375
+    }
+  },
+  "냐오불": {
+    "geom_vector": {
+      "face_ratio": -0.09710693359375,
+      "eye_distance": -0.1102294921875,
+      "eye_size": -0.0750732421875,
+      "jaw_width": 0.115478515625,
+      "complexity": 1.0068359375
+    }
+  },
+  "노고치": {
+    "geom_vector": {
+      "face_ratio": -0.1480712890625,
+      "eye_distance": -0.0189208984375,
+      "eye_size": 0.025390625,
+      "jaw_width": 0.0124664306640625,
+      "complexity": 0.8310546875
+    }
+  },
+  "노라키": {
+    "geom_vector": {
+      "face_ratio": 0.038482666015625,
+      "eye_distance": 0.042022705078125,
+      "eye_size": -0.002826690673828125,
+      "jaw_width": -0.022186279296875,
+      "complexity": 1.6669921875
+    }
+  },
+  "누니머기": {
+    "geom_vector": {
+      "face_ratio": 0.182373046875,
+      "eye_distance": -0.003643035888671875,
+      "eye_size": 0.0880126953125,
+      "jaw_width": 0.268798828125,
+      "complexity": 1.330078125
+    }
+  },
+  "누리공": {
+    "geom_vector": {
+      "face_ratio": 0.08123779296875,
+      "eye_distance": 0.00600433349609375,
+      "eye_size": 0.244873046875,
+      "jaw_width": 0.04400634765625,
+      "complexity": 1.0087890625
+    }
+  },
+  "니드런": {
+    "geom_vector": {
+      "face_ratio": -0.00855255126953125,
+      "eye_distance": -0.14453125,
+      "eye_size": 0.06939697265625,
+      "jaw_width": 0.01104736328125,
+      "complexity": 0.71630859375
+    }
+  },
+  "니로우": {
+    "geom_vector": {
+      "face_ratio": -0.0162506103515625,
+      "eye_distance": 0.004543304443359375,
+      "eye_size": -0.00927734375,
+      "jaw_width": -0.0909423828125,
+      "complexity": 0.7705078125
+    }
+  },
+  "다크라이": {
+    "geom_vector": {
+      "face_ratio": -0.0631103515625,
+      "eye_distance": 0.02325439453125,
+      "eye_size": 0.0406494140625,
+      "jaw_width": -0.0892333984375,
+      "complexity": 0.89990234375
+    }
+  },
+  "데굴레오": {
+    "geom_vector": {
+      "face_ratio": -0.1058349609375,
+      "eye_distance": 0.042572021484375,
+      "eye_size": 0.0259857177734375,
+      "jaw_width": -0.0728759765625,
+      "complexity": 0.71728515625
+    }
+  },
+  "데덴네": {
+    "geom_vector": {
+      "face_ratio": 0.101318359375,
+      "eye_distance": 0.0243377685546875,
+      "eye_size": -0.15478515625,
+      "jaw_width": -0.08233642578125,
+      "complexity": 0.9697265625
+    }
+  },
+  "델빌": {
+    "geom_vector": {
+      "face_ratio": 0.14892578125,
+      "eye_distance": -0.0816650390625,
+      "eye_size": 0.183837890625,
+      "jaw_width": 0.0694580078125,
+      "complexity": 0.85791015625
+    }
+  },
+  "도치마론": {
+    "geom_vector": {
+      "face_ratio": 0.06500244140625,
+      "eye_distance": -0.11114501953125,
+      "eye_size": -0.11322021484375,
+      "jaw_width": -0.036041259765625,
+      "complexity": 0.83642578125
+    }
+  },
+  "두두": {
+    "geom_vector": {
+      "face_ratio": -0.035491943359375,
+      "eye_distance": 0.0865478515625,
+      "eye_size": 0.0230255126953125,
+      "jaw_width": -0.01235198974609375,
+      "complexity": 1.1298828125
+    }
+  },
+  "두리쥐": {
+    "geom_vector": {
+      "face_ratio": -0.172119140625,
+      "eye_distance": 0.110595703125,
+      "eye_size": 0.09490966796875,
+      "jaw_width": 0.159423828125,
+      "complexity": 1.580078125
+    }
+  },
+  "디아루가": {
+    "geom_vector": {
+      "face_ratio": 0.052520751953125,
+      "eye_distance": -0.12384033203125,
+      "eye_size": 0.0635986328125,
+      "jaw_width": 0.10968017578125,
+      "complexity": 0.97412109375
+    }
+  },
+  "디안시": {
+    "geom_vector": {
+      "face_ratio": 0.06671142578125,
+      "eye_distance": 0.1253662109375,
+      "eye_size": -0.11199951171875,
+      "jaw_width": 0.1260986328125,
+      "complexity": 1.125
+    }
+  },
+  "뚜꾸리": {
+    "geom_vector": {
+      "face_ratio": 0.1783447265625,
+      "eye_distance": 0.10107421875,
+      "eye_size": -0.06915283203125,
+      "jaw_width": 0.0802001953125,
+      "complexity": 0.99169921875
+    }
+  },
+  "뚜벅쵸": {
+    "geom_vector": {
+      "face_ratio": 0.01262664794921875,
+      "eye_distance": 0.095458984375,
+      "eye_size": 0.0155487060546875,
+      "jaw_width": -0.0284271240234375,
+      "complexity": 1.0078125
+    }
+  },
+  "뜨아거": {
+    "geom_vector": {
+      "face_ratio": -0.033721923828125,
+      "eye_distance": 0.044647216796875,
+      "eye_size": -0.06298828125,
+      "jaw_width": -0.07965087890625,
+      "complexity": 0.79541015625
+    }
+  },
+  "라이코": {
+    "geom_vector": {
+      "face_ratio": 0.055389404296875,
+      "eye_distance": -0.1424560546875,
+      "eye_size": 0.1343994140625,
+      "jaw_width": 0.1591796875,
+      "complexity": 0.8466796875
+    }
+  },
+  "라티아스": {
+    "geom_vector": {
+      "face_ratio": -0.042694091796875,
+      "eye_distance": 0.1300048828125,
+      "eye_size": 0.1671142578125,
+      "jaw_width": -0.0163726806640625,
+      "complexity": 0.8056640625
+    }
+  },
+  "라프라스": {
+    "geom_vector": {
+      "face_ratio": 0.051239013671875,
+      "eye_distance": 0.04168701171875,
+      "eye_size": 0.054656982421875,
+      "jaw_width": 0.039581298828125,
+      "complexity": 0.8681640625
+    }
+  },
+  "레시라무": {
+    "geom_vector": {
+      "face_ratio": -0.06640625,
+      "eye_distance": -0.01800537109375,
+      "eye_size": 0.0242462158203125,
+      "jaw_width": 0.05194091796875,
+      "complexity": 0.73095703125
+    }
+  },
+  "롱스톤": {
+    "geom_vector": {
+      "face_ratio": -0.08331298828125,
+      "eye_distance": -0.1060791015625,
+      "eye_size": 0.0287933349609375,
+      "jaw_width": -0.08917236328125,
+      "complexity": 1.08203125
+    }
+  },
+  "루기아": {
+    "geom_vector": {
+      "face_ratio": 0.05706787109375,
+      "eye_distance": 0.0267791748046875,
+      "eye_size": 0.18017578125,
+      "jaw_width": 0.0360107421875,
+      "complexity": 0.70654296875
+    }
+  },
+  "루리리": {
+    "geom_vector": {
+      "face_ratio": -0.039215087890625,
+      "eye_distance": -0.00534820556640625,
+      "eye_size": -0.075439453125,
+      "jaw_width": 0.106201171875,
+      "complexity": 1.0400390625
+    }
+  },
+  "루브도": {
+    "geom_vector": {
+      "face_ratio": 0.1781005859375,
+      "eye_distance": -0.06414794921875,
+      "eye_size": 0.158203125,
+      "jaw_width": 0.1048583984375,
+      "complexity": 0.6552734375
+    }
+  },
+  "리아코": {
+    "geom_vector": {
+      "face_ratio": 0.01861572265625,
+      "eye_distance": -0.033111572265625,
+      "eye_size": 0.15283203125,
+      "jaw_width": -0.0166473388671875,
+      "complexity": 0.91748046875
+    }
+  },
+  "리오르": {
+    "geom_vector": {
+      "face_ratio": 0.037567138671875,
+      "eye_distance": -0.08935546875,
+      "eye_size": 0.19970703125,
+      "jaw_width": 0.032684326171875,
+      "complexity": 0.60498046875
+    }
+  },
+  "마그마": {
+    "geom_vector": {
+      "face_ratio": -0.08453369140625,
+      "eye_distance": 0.06622314453125,
+      "eye_size": -0.196044921875,
+      "jaw_width": 0.0726318359375,
+      "complexity": 0.99462890625
+    }
+  },
+  "마나피": {
+    "geom_vector": {
+      "face_ratio": -0.08209228515625,
+      "eye_distance": 0.0300140380859375,
+      "eye_size": 0.1470947265625,
+      "jaw_width": 0.0833740234375,
+      "complexity": 0.70263671875
+    }
+  },
+  "망키": {
+    "geom_vector": {
+      "face_ratio": 0.1412353515625,
+      "eye_distance": -0.19970703125,
+      "eye_size": 0.07025146484375,
+      "jaw_width": -0.059173583984375,
+      "complexity": 1.013671875
+    }
+  },
+  "메로엣타": {
+    "geom_vector": {
+      "face_ratio": 0.0019474029541015625,
+      "eye_distance": 0.0479736328125,
+      "eye_size": -0.05780029296875,
+      "jaw_width": 0.04058837890625,
+      "complexity": 1.1328125
+    }
+  },
+  "메리프": {
+    "geom_vector": {
+      "face_ratio": -0.12481689453125,
+      "eye_distance": -0.0211029052734375,
+      "eye_size": 0.1243896484375,
+      "jaw_width": -0.059051513671875,
+      "complexity": 1.240234375
+    }
+  },
+  "모래두지": {
+    "geom_vector": {
+      "face_ratio": -0.08935546875,
+      "eye_distance": -0.13525390625,
+      "eye_size": 0.0509033203125,
+      "jaw_width": 0.0135345458984375,
+      "complexity": 0.84033203125
+    }
+  },
+  "모르페코": {
+    "geom_vector": {
+      "face_ratio": 0.06768798828125,
+      "eye_distance": 0.045654296875,
+      "eye_size": 0.005950927734375,
+      "jaw_width": 0.0228118896484375,
+      "complexity": 0.9990234375
+    }
+  },
+  "모부기": {
+    "geom_vector": {
+      "face_ratio": -0.0140533447265625,
+      "eye_distance": 0.061859130859375,
+      "eye_size": -0.0311737060546875,
+      "jaw_width": 0.0130157470703125,
+      "complexity": 0.78173828125
+    }
+  },
+  "목도리키텔": {
+    "geom_vector": {
+      "face_ratio": 0.10626220703125,
+      "eye_distance": 0.058380126953125,
+      "eye_size": -0.006683349609375,
+      "jaw_width": 0.05419921875,
+      "complexity": 0.89453125
+    }
+  },
+  "몽나": {
+    "geom_vector": {
+      "face_ratio": 0.0184478759765625,
+      "eye_distance": 0.0340576171875,
+      "eye_size": 0.130615234375,
+      "jaw_width": -0.1572265625,
+      "complexity": 0.83837890625
+    }
+  },
+  "무우마": {
+    "geom_vector": {
+      "face_ratio": -0.0841064453125,
+      "eye_distance": 0.0281982421875,
+      "eye_size": -0.1427001953125,
+      "jaw_width": 0.057098388671875,
+      "complexity": 1.212890625
+    }
+  },
+  "물짱이": {
+    "geom_vector": {
+      "face_ratio": -0.0258941650390625,
+      "eye_distance": 0.13232421875,
+      "eye_size": 0.124755859375,
+      "jaw_width": -0.01110076904296875,
+      "complexity": 0.9091796875
+    }
+  },
+  "뮤": {
+    "geom_vector": {
+      "face_ratio": 0.1387939453125,
+      "eye_distance": 0.005947113037109375,
+      "eye_size": 0.082275390625,
+      "jaw_width": -0.033355712890625,
+      "complexity": 1.1884765625
+    }
+  },
+  "뮤츠": {
+    "geom_vector": {
+      "face_ratio": 0.10614013671875,
+      "eye_distance": -0.08648681640625,
+      "eye_size": -0.1248779296875,
+      "jaw_width": -0.060577392578125,
+      "complexity": 1.1826171875
+    }
+  },
+  "미끄메라": {
+    "geom_vector": {
+      "face_ratio": 0.023193359375,
+      "eye_distance": 0.10125732421875,
+      "eye_size": -0.005107879638671875,
+      "jaw_width": -0.1375732421875,
+      "complexity": 1.00390625
+    }
+  },
+  "미뇽": {
+    "geom_vector": {
+      "face_ratio": -0.046966552734375,
+      "eye_distance": -0.00711822509765625,
+      "eye_size": 0.177734375,
+      "jaw_width": 0.0819091796875,
+      "complexity": 0.76416015625
+    }
+  },
+  "미니브": {
+    "geom_vector": {
+      "face_ratio": -0.10107421875,
+      "eye_distance": 0.1287841796875,
+      "eye_size": -0.101318359375,
+      "jaw_width": -0.0675048828125,
+      "complexity": 0.88427734375
+    }
+  },
+  "미라이돈": {
+    "geom_vector": {
+      "face_ratio": -0.043060302734375,
+      "eye_distance": 0.0609130859375,
+      "eye_size": -0.0635986328125,
+      "jaw_width": 0.1376953125,
+      "complexity": 1.0673828125
+    }
+  },
+  "바닐프티": {
+    "geom_vector": {
+      "face_ratio": -0.118896484375,
+      "eye_distance": 0.056640625,
+      "eye_size": -0.0144195556640625,
+      "jaw_width": 0.0146636962890625,
+      "complexity": 1.1083984375
+    }
+  },
+  "방패톱스": {
+    "geom_vector": {
+      "face_ratio": -0.08319091796875,
+      "eye_distance": -0.07391357421875,
+      "eye_size": 0.2034912109375,
+      "jaw_width": -0.07720947265625,
+      "complexity": 1.1728515625
+    }
+  },
+  "보르쥐": {
+    "geom_vector": {
+      "face_ratio": 0.0833740234375,
+      "eye_distance": -0.0003032684326171875,
+      "eye_size": -0.209228515625,
+      "jaw_width": -0.1905517578125,
+      "complexity": 1.0048828125
+    }
+  },
+  "볼트로스": {
+    "geom_vector": {
+      "face_ratio": -0.060089111328125,
+      "eye_distance": -0.08551025390625,
+      "eye_size": -0.0335693359375,
+      "jaw_width": 0.108642578125,
+      "complexity": 0.748046875
+    }
+  },
+  "부우부": {
+    "geom_vector": {
+      "face_ratio": -0.050689697265625,
+      "eye_distance": -0.201171875,
+      "eye_size": -0.2252197265625,
+      "jaw_width": -0.1884765625,
+      "complexity": 0.947265625
+    }
+  },
+  "불꽃숭이": {
+    "geom_vector": {
+      "face_ratio": 0.0306396484375,
+      "eye_distance": 0.1612548828125,
+      "eye_size": -0.030517578125,
+      "jaw_width": -0.033599853515625,
+      "complexity": 1.6611328125
+    }
+  },
+  "브이젤": {
+    "geom_vector": {
+      "face_ratio": 0.1419677734375,
+      "eye_distance": 0.07080078125,
+      "eye_size": 0.1466064453125,
+      "jaw_width": 0.028076171875,
+      "complexity": 0.8046875
+    }
+  },
+  "브케인": {
+    "geom_vector": {
+      "face_ratio": 0.04119873046875,
+      "eye_distance": 0.062164306640625,
+      "eye_size": 0.0943603515625,
+      "jaw_width": 0.01413726806640625,
+      "complexity": 0.8427734375
+    }
+  },
+  "비리디온": {
+    "geom_vector": {
+      "face_ratio": 0.06707763671875,
+      "eye_distance": -0.0197601318359375,
+      "eye_size": -0.0491943359375,
+      "jaw_width": -0.0985107421875,
+      "complexity": 1.1689453125
+    }
+  },
+  "비버니": {
+    "geom_vector": {
+      "face_ratio": 0.0207366943359375,
+      "eye_distance": 0.1484375,
+      "eye_size": -0.061859130859375,
+      "jaw_width": -0.069580078125,
+      "complexity": 1.298828125
+    }
+  },
+  "빠모": {
+    "geom_vector": {
+      "face_ratio": 0.017669677734375,
+      "eye_distance": -0.00885772705078125,
+      "eye_size": -0.059722900390625,
+      "jaw_width": 0.0162200927734375,
+      "complexity": 0.8115234375
+    }
+  },
+  "삐": {
+    "geom_vector": {
+      "face_ratio": 0.14208984375,
+      "eye_distance": 0.046661376953125,
+      "eye_size": 0.043426513671875,
+      "jaw_width": -0.1519775390625,
+      "complexity": 1.2001953125
+    }
+  },
+  "사철록": {
+    "geom_vector": {
+      "face_ratio": 0.2274169921875,
+      "eye_distance": 0.0975341796875,
+      "eye_size": 0.190673828125,
+      "jaw_width": 0.06640625,
+      "complexity": 1.7587890625
+    }
+  },
+  "세레비": {
+    "geom_vector": {
+      "face_ratio": 0.013916015625,
+      "eye_distance": -0.033935546875,
+      "eye_size": -0.039031982421875,
+      "jaw_width": 0.1068115234375,
+      "complexity": 0.70703125
+    }
+  },
+  "수댕이": {
+    "geom_vector": {
+      "face_ratio": 0.048614501953125,
+      "eye_distance": -0.045928955078125,
+      "eye_size": 0.019805908203125,
+      "jaw_width": 0.046051025390625,
+      "complexity": 0.81689453125
+    }
+  },
+  "쉐이미": {
+    "geom_vector": {
+      "face_ratio": -0.0950927734375,
+      "eye_distance": -7.808208465576172e-05,
+      "eye_size": 0.056396484375,
+      "jaw_width": -0.0267181396484375,
+      "complexity": 0.7802734375
+    }
+  },
+  "스라크": {
+    "geom_vector": {
+      "face_ratio": -0.0797119140625,
+      "eye_distance": -0.0899658203125,
+      "eye_size": -0.1622314453125,
+      "jaw_width": 0.01409149169921875,
+      "complexity": 1.078125
+    }
+  },
+  "스이쿤": {
+    "geom_vector": {
+      "face_ratio": 0.1380615234375,
+      "eye_distance": -0.11224365234375,
+      "eye_size": 0.1214599609375,
+      "jaw_width": 0.08441162109375,
+      "complexity": 1.1748046875
+    }
+  },
+  "스콜피": {
+    "geom_vector": {
+      "face_ratio": 0.05169677734375,
+      "eye_distance": -0.0004432201385498047,
+      "eye_size": 0.1903076171875,
+      "jaw_width": 0.07513427734375,
+      "complexity": 0.74755859375
+    }
+  },
+  "식스테일": {
+    "geom_vector": {
+      "face_ratio": 0.0296173095703125,
+      "eye_distance": 0.01654052734375,
+      "eye_size": 0.037078857421875,
+      "jaw_width": 0.1044921875,
+      "complexity": 0.9208984375
+    }
+  },
+  "썬더": {
+    "geom_vector": {
+      "face_ratio": 0.01922607421875,
+      "eye_distance": 0.06378173828125,
+      "eye_size": 0.0609130859375,
+      "jaw_width": -0.09637451171875,
+      "complexity": 1.248046875
+    }
+  },
+  "아라리": {
+    "geom_vector": {
+      "face_ratio": 0.055206298828125,
+      "eye_distance": 0.1317138671875,
+      "eye_size": -0.09368896484375,
+      "jaw_width": -0.022247314453125,
+      "complexity": 1.755859375
+    }
+  },
+  "아르세우스": {
+    "geom_vector": {
+      "face_ratio": -0.08514404296875,
+      "eye_distance": -0.015411376953125,
+      "eye_size": -0.2020263671875,
+      "jaw_width": 0.1085205078125,
+      "complexity": 1.00390625
+    }
+  },
+  "아마루스": {
+    "geom_vector": {
+      "face_ratio": -0.042633056640625,
+      "eye_distance": -0.03741455078125,
+      "eye_size": 0.052154541015625,
+      "jaw_width": 0.1226806640625,
+      "complexity": 0.80712890625
+    }
+  },
+  "아차모": {
+    "geom_vector": {
+      "face_ratio": -0.1649169921875,
+      "eye_distance": 0.09161376953125,
+      "eye_size": -0.02923583984375,
+      "jaw_width": -0.05926513671875,
+      "complexity": 1.0185546875
+    }
+  },
+  "알통몬": {
+    "geom_vector": {
+      "face_ratio": 0.10870361328125,
+      "eye_distance": -0.0716552734375,
+      "eye_size": 0.11578369140625,
+      "jaw_width": 0.05517578125,
+      "complexity": 0.896484375
+    }
+  },
+  "암멍이": {
+    "geom_vector": {
+      "face_ratio": 0.10174560546875,
+      "eye_distance": -0.0936279296875,
+      "eye_size": 0.071044921875,
+      "jaw_width": -0.037841796875,
+      "complexity": 0.73291015625
+    }
+  },
+  "야돈": {
+    "geom_vector": {
+      "face_ratio": 0.07940673828125,
+      "eye_distance": 0.04901123046875,
+      "eye_size": -0.007472991943359375,
+      "jaw_width": -0.06121826171875,
+      "complexity": 0.85498046875
+    }
+  },
+  "에나비": {
+    "geom_vector": {
+      "face_ratio": 0.08184814453125,
+      "eye_distance": 0.00582122802734375,
+      "eye_size": -0.01236724853515625,
+      "jaw_width": -0.047821044921875,
+      "complexity": 1.0869140625
+    }
+  },
+  "엔테이": {
+    "geom_vector": {
+      "face_ratio": -0.061859130859375,
+      "eye_distance": -0.1124267578125,
+      "eye_size": -0.07244873046875,
+      "jaw_width": 0.0227813720703125,
+      "complexity": 0.71484375
+    }
+  },
+  "염버니": {
+    "geom_vector": {
+      "face_ratio": -0.0240325927734375,
+      "eye_distance": 0.04644775390625,
+      "eye_size": -0.244384765625,
+      "jaw_width": -0.00954437255859375,
+      "complexity": 0.95947265625
+    }
+  },
+  "영구스": {
+    "geom_vector": {
+      "face_ratio": 0.12744140625,
+      "eye_distance": 0.05010986328125,
+      "eye_size": 0.0161895751953125,
+      "jaw_width": -0.057861328125,
+      "complexity": 0.99853515625
+    }
+  },
+  "요테리": {
+    "geom_vector": {
+      "face_ratio": 0.022918701171875,
+      "eye_distance": -0.178955078125,
+      "eye_size": 0.051910400390625,
+      "jaw_width": -0.048187255859375,
+      "complexity": 1.0625
+    }
+  },
+  "우파": {
+    "geom_vector": {
+      "face_ratio": -0.02508544921875,
+      "eye_distance": 0.065185546875,
+      "eye_size": 0.0439453125,
+      "jaw_width": -0.07000732421875,
+      "complexity": 0.72998046875
+    }
+  },
+  "울머기": {
+    "geom_vector": {
+      "face_ratio": -0.036590576171875,
+      "eye_distance": -0.039459228515625,
+      "eye_size": 0.048919677734375,
+      "jaw_width": 0.0222320556640625,
+      "complexity": 0.6240234375
+    }
+  },
+  "유크시": {
+    "geom_vector": {
+      "face_ratio": -0.0938720703125,
+      "eye_distance": 0.2076416015625,
+      "eye_size": 0.026153564453125,
+      "jaw_width": -0.0176544189453125,
+      "complexity": 0.8984375
+    }
+  },
+  "이벨타르": {
+    "geom_vector": {
+      "face_ratio": -0.15869140625,
+      "eye_distance": 0.10845947265625,
+      "eye_size": -0.059326171875,
+      "jaw_width": 0.062744140625,
+      "complexity": 0.908203125
+    }
+  },
+  "이브이": {
+    "geom_vector": {
+      "face_ratio": 0.030303955078125,
+      "eye_distance": -0.04766845703125,
+      "eye_size": -0.03564453125,
+      "jaw_width": 0.0238189697265625,
+      "complexity": 0.642578125
+    }
+  },
+  "이상해씨": {
+    "geom_vector": {
+      "face_ratio": -0.041595458984375,
+      "eye_distance": -0.06732177734375,
+      "eye_size": 0.0153656005859375,
+      "jaw_width": -0.0243072509765625,
+      "complexity": 0.623046875
+    }
+  },
+  "자루도": {
+    "geom_vector": {
+      "face_ratio": 0.007289886474609375,
+      "eye_distance": -0.0849609375,
+      "eye_size": -0.219970703125,
+      "jaw_width": 0.048980712890625,
+      "complexity": 0.8115234375
+    }
+  },
+  "자마젠타": {
+    "geom_vector": {
+      "face_ratio": -0.036773681640625,
+      "eye_distance": 0.086181640625,
+      "eye_size": -0.19873046875,
+      "jaw_width": 0.06427001953125,
+      "complexity": 0.88330078125
+    }
+  },
+  "자시안": {
+    "geom_vector": {
+      "face_ratio": 0.00446319580078125,
+      "eye_distance": -0.0020618438720703125,
+      "eye_size": -0.10296630859375,
+      "jaw_width": 0.059661865234375,
+      "complexity": 0.75830078125
+    }
+  },
+  "잠만보": {
+    "geom_vector": {
+      "face_ratio": 0.034820556640625,
+      "eye_distance": -0.0821533203125,
+      "eye_size": -0.00945281982421875,
+      "jaw_width": 0.01389312744140625,
+      "complexity": 0.630859375
+    }
+  },
+  "제르네아스": {
+    "geom_vector": {
+      "face_ratio": -0.08984375,
+      "eye_distance": 0.1234130859375,
+      "eye_size": 0.05633544921875,
+      "jaw_width": 0.0745849609375,
+      "complexity": 0.86376953125
+    }
+  },
+  "제크로무": {
+    "geom_vector": {
+      "face_ratio": -0.03851318359375,
+      "eye_distance": -0.0223388671875,
+      "eye_size": -0.01285552978515625,
+      "jaw_width": 0.150146484375,
+      "complexity": 0.7255859375
+    }
+  },
+  "주리비얀": {
+    "geom_vector": {
+      "face_ratio": -0.059967041015625,
+      "eye_distance": 0.067138671875,
+      "eye_size": 0.000823974609375,
+      "jaw_width": -0.0472412109375,
+      "complexity": 0.6826171875
+    }
+  },
+  "줄뮤마": {
+    "geom_vector": {
+      "face_ratio": -0.0545654296875,
+      "eye_distance": -0.1378173828125,
+      "eye_size": 0.040863037109375,
+      "jaw_width": 0.17626953125,
+      "complexity": 0.654296875
+    }
+  },
+  "쥬쥬": {
+    "geom_vector": {
+      "face_ratio": 0.00437164306640625,
+      "eye_distance": 0.033477783203125,
+      "eye_size": 0.01049041748046875,
+      "jaw_width": 0.091064453125,
+      "complexity": 0.529296875
+    }
+  },
+  "지가르데": {
+    "geom_vector": {
+      "face_ratio": -0.04754638671875,
+      "eye_distance": -0.01181793212890625,
+      "eye_size": -0.10107421875,
+      "jaw_width": 0.00661468505859375,
+      "complexity": 0.67822265625
+    }
+  },
+  "지라치": {
+    "geom_vector": {
+      "face_ratio": -0.0121307373046875,
+      "eye_distance": -0.04730224609375,
+      "eye_size": 0.06298828125,
+      "jaw_width": -0.038421630859375,
+      "complexity": 0.91357421875
+    }
+  },
+  "질퍽이": {
+    "geom_vector": {
+      "face_ratio": -0.0005736351013183594,
+      "eye_distance": -0.12237548828125,
+      "eye_size": 0.015289306640625,
+      "jaw_width": -0.1912841796875,
+      "complexity": 1.02734375
+    }
+  },
+  "찌르꼬": {
+    "geom_vector": {
+      "face_ratio": 0.05010986328125,
+      "eye_distance": 0.09228515625,
+      "eye_size": -0.138427734375,
+      "jaw_width": -0.0013675689697265625,
+      "complexity": 0.66357421875
+    }
+  },
+  "찌리리공": {
+    "geom_vector": {
+      "face_ratio": -0.2822265625,
+      "eye_distance": 0.0859375,
+      "eye_size": 0.00608062744140625,
+      "jaw_width": -0.06243896484375,
+      "complexity": 0.95654296875
+    }
+  },
+  "체리버": {
+    "geom_vector": {
+      "face_ratio": -0.0997314453125,
+      "eye_distance": 0.212158203125,
+      "eye_size": 0.045684814453125,
+      "jaw_width": 0.0067596435546875,
+      "complexity": 1.083984375
+    }
+  },
+  "치고마": {
+    "geom_vector": {
+      "face_ratio": 0.07293701171875,
+      "eye_distance": -0.2169189453125,
+      "eye_size": 0.1358642578125,
+      "jaw_width": 0.0308074951171875,
+      "complexity": 1.4267578125
+    }
+  },
+  "치라미": {
+    "geom_vector": {
+      "face_ratio": -0.051239013671875,
+      "eye_distance": -0.07281494140625,
+      "eye_size": -0.1102294921875,
+      "jaw_width": -0.03424072265625,
+      "complexity": 1.02734375
+    }
+  },
+  "치코리타": {
+    "geom_vector": {
+      "face_ratio": 0.050811767578125,
+      "eye_distance": 0.0120697021484375,
+      "eye_size": -0.1827392578125,
+      "jaw_width": -0.053558349609375,
+      "complexity": 1.0068359375
+    }
+  },
+  "칠색조": {
+    "geom_vector": {
+      "face_ratio": -0.20556640625,
+      "eye_distance": 0.0877685546875,
+      "eye_size": -0.082763671875,
+      "jaw_width": -0.06341552734375,
+      "complexity": 1.1162109375
+    }
+  },
+  "캐이시": {
+    "geom_vector": {
+      "face_ratio": 0.0240020751953125,
+      "eye_distance": 0.055389404296875,
+      "eye_size": 0.0254669189453125,
+      "jaw_width": 0.1220703125,
+      "complexity": 1.1943359375
+    }
+  },
+  "케르디오": {
+    "geom_vector": {
+      "face_ratio": 0.029327392578125,
+      "eye_distance": -0.01529693603515625,
+      "eye_size": 0.05712890625,
+      "jaw_width": 0.1407470703125,
+      "complexity": 0.96240234375
+    }
+  },
+  "코라이돈": {
+    "geom_vector": {
+      "face_ratio": -0.11614990234375,
+      "eye_distance": -0.023101806640625,
+      "eye_size": -0.1175537109375,
+      "jaw_width": 0.1163330078125,
+      "complexity": 1.509765625
+    }
+  },
+  "코바르온": {
+    "geom_vector": {
+      "face_ratio": 0.1541748046875,
+      "eye_distance": -0.1624755859375,
+      "eye_size": 0.206298828125,
+      "jaw_width": 0.048492431640625,
+      "complexity": 1.2373046875
+    }
+  },
+  "코코리": {
+    "geom_vector": {
+      "face_ratio": 0.0567626953125,
+      "eye_distance": -0.04656982421875,
+      "eye_size": 0.2269287109375,
+      "jaw_width": -0.004100799560546875,
+      "complexity": 1.103515625
+    }
+  },
+  "코터스": {
+    "geom_vector": {
+      "face_ratio": -0.04827880859375,
+      "eye_distance": -0.1627197265625,
+      "eye_size": -0.002307891845703125,
+      "jaw_width": -0.0303192138671875,
+      "complexity": 0.99951171875
+    }
+  },
+  "콩둘기": {
+    "geom_vector": {
+      "face_ratio": -0.09014892578125,
+      "eye_distance": -0.1048583984375,
+      "eye_size": 0.030426025390625,
+      "jaw_width": -0.054046630859375,
+      "complexity": 0.99365234375
+    }
+  },
+  "크레세리아": {
+    "geom_vector": {
+      "face_ratio": 0.033111572265625,
+      "eye_distance": 0.241455078125,
+      "eye_size": 0.2239990234375,
+      "jaw_width": 0.037139892578125,
+      "complexity": 1.0732421875
+    }
+  },
+  "탐리스": {
+    "geom_vector": {
+      "face_ratio": 0.125244140625,
+      "eye_distance": 0.07666015625,
+      "eye_size": -0.0804443359375,
+      "jaw_width": -0.12188720703125,
+      "complexity": 1.119140625
+    }
+  },
+  "탕구리": {
+    "geom_vector": {
+      "face_ratio": 0.039337158203125,
+      "eye_distance": -0.1458740234375,
+      "eye_size": 0.1611328125,
+      "jaw_width": 0.052703857421875,
+      "complexity": 0.483154296875
+    }
+  },
+  "테라키온": {
+    "geom_vector": {
+      "face_ratio": 0.09515380859375,
+      "eye_distance": -0.2137451171875,
+      "eye_size": 0.0301513671875,
+      "jaw_width": -0.144775390625,
+      "complexity": 0.95654296875
+    }
+  },
+  "토게데마루": {
+    "geom_vector": {
+      "face_ratio": 0.02154541015625,
+      "eye_distance": -0.031707763671875,
+      "eye_size": 0.07501220703125,
+      "jaw_width": 0.055694580078125,
+      "complexity": 1.3134765625
+    }
+  },
+  "토게피": {
+    "geom_vector": {
+      "face_ratio": 0.0350341796875,
+      "eye_distance": 0.02264404296875,
+      "eye_size": 0.0003662109375,
+      "jaw_width": -0.0294647216796875,
+      "complexity": 1.3447265625
+    }
+  },
+  "트리미앙": {
+    "geom_vector": {
+      "face_ratio": 0.138427734375,
+      "eye_distance": -0.12939453125,
+      "eye_size": 0.09173583984375,
+      "jaw_width": 0.06268310546875,
+      "complexity": 0.78857421875
+    }
+  },
+  "티고라스": {
+    "geom_vector": {
+      "face_ratio": 0.0565185546875,
+      "eye_distance": -0.339111328125,
+      "eye_size": -0.024871826171875,
+      "jaw_width": -0.1153564453125,
+      "complexity": 1.171875
+    }
+  },
+  "파라꼬": {
+    "geom_vector": {
+      "face_ratio": 0.059814453125,
+      "eye_distance": -0.00786590576171875,
+      "eye_size": 0.04425048828125,
+      "jaw_width": -0.177001953125,
+      "complexity": 1.70703125
+    }
+  },
+  "파르빗": {
+    "geom_vector": {
+      "face_ratio": -0.05999755859375,
+      "eye_distance": 0.1580810546875,
+      "eye_size": -0.26953125,
+      "jaw_width": -0.1363525390625,
+      "complexity": 1.390625
+    }
+  },
+  "파오리": {
+    "geom_vector": {
+      "face_ratio": -0.01531219482421875,
+      "eye_distance": 0.2083740234375,
+      "eye_size": -0.1217041015625,
+      "jaw_width": 0.014984130859375,
+      "complexity": 1.5546875
+    }
+  },
+  "파이리": {
+    "geom_vector": {
+      "face_ratio": -0.0220794677734375,
+      "eye_distance": 0.031829833984375,
+      "eye_size": -0.0122833251953125,
+      "jaw_width": -0.10406494140625,
+      "complexity": 1.2119140625
+    }
+  },
+  "파이어": {
+    "geom_vector": {
+      "face_ratio": -0.181884765625,
+      "eye_distance": 0.327392578125,
+      "eye_size": -0.1380615234375,
+      "jaw_width": 0.027923583984375,
+      "complexity": 1.478515625
+    }
+  },
+  "파치리스": {
+    "geom_vector": {
+      "face_ratio": -0.0894775390625,
+      "eye_distance": -0.056671142578125,
+      "eye_size": 0.074462890625,
+      "jaw_width": 0.014251708984375,
+      "complexity": 0.69140625
+    }
+  },
+  "판짱": {
+    "geom_vector": {
+      "face_ratio": 0.09942626953125,
+      "eye_distance": -0.05877685546875,
+      "eye_size": 0.24072265625,
+      "jaw_width": -0.026885986328125,
+      "complexity": 1.7421875
+    }
+  },
+  "팽도리": {
+    "geom_vector": {
+      "face_ratio": -0.06414794921875,
+      "eye_distance": 0.0797119140625,
+      "eye_size": 0.02093505859375,
+      "jaw_width": 0.131591796875,
+      "complexity": 0.8857421875
+    }
+  },
+  "포니타": {
+    "geom_vector": {
+      "face_ratio": 0.056976318359375,
+      "eye_distance": -0.0037822723388671875,
+      "eye_size": 0.176513671875,
+      "jaw_width": 0.148193359375,
+      "complexity": 1.26953125
+    }
+  },
+  "포챠나": {
+    "geom_vector": {
+      "face_ratio": -0.2269287109375,
+      "eye_distance": -0.1732177734375,
+      "eye_size": -0.15380859375,
+      "jaw_width": 0.068359375,
+      "complexity": 1.375
+    }
+  },
+  "폴리곤": {
+    "geom_vector": {
+      "face_ratio": -0.1470947265625,
+      "eye_distance": -0.0125579833984375,
+      "eye_size": -0.1680908203125,
+      "jaw_width": -0.0262298583984375,
+      "complexity": 1.45703125
+    }
+  },
+  "푸린": {
+    "geom_vector": {
+      "face_ratio": 0.1524658203125,
+      "eye_distance": 0.005397796630859375,
+      "eye_size": 0.056884765625,
+      "jaw_width": -0.1116943359375,
+      "complexity": 1.10546875
+    }
+  },
+  "푸호꼬": {
+    "geom_vector": {
+      "face_ratio": -0.06195068359375,
+      "eye_distance": -0.01029205322265625,
+      "eye_size": -0.05511474609375,
+      "jaw_width": 0.06854248046875,
+      "complexity": 0.8779296875
+    }
+  },
+  "프리져": {
+    "geom_vector": {
+      "face_ratio": -0.0489501953125,
+      "eye_distance": 0.10467529296875,
+      "eye_size": 0.07623291015625,
+      "jaw_width": -0.06854248046875,
+      "complexity": 1.017578125
+    }
+  },
+  "플라베베": {
+    "geom_vector": {
+      "face_ratio": -0.07177734375,
+      "eye_distance": 0.1947021484375,
+      "eye_size": -0.1881103515625,
+      "jaw_width": 0.031829833984375,
+      "complexity": 1.3251953125
+    }
+  },
+  "피츄": {
+    "geom_vector": {
+      "face_ratio": 0.024444580078125,
+      "eye_distance": -0.058013916015625,
+      "eye_size": -0.01187896728515625,
+      "jaw_width": 0.017303466796875,
+      "complexity": 0.99267578125
+    }
+  },
+  "화살꼬빈": {
+    "geom_vector": {
+      "face_ratio": -0.161376953125,
+      "eye_distance": 0.156005859375,
+      "eye_size": -0.030975341796875,
+      "jaw_width": -0.09527587890625,
+      "complexity": 1.3310546875
+    }
+  },
+  "후파": {
+    "geom_vector": {
+      "face_ratio": 0.060821533203125,
+      "eye_distance": 0.12396240234375,
+      "eye_size": -0.11846923828125,
+      "jaw_width": 0.034515380859375,
+      "complexity": 1.4697265625
+    }
+  },
+  "흥나숭": {
+    "geom_vector": {
+      "face_ratio": -0.012664794921875,
+      "eye_distance": -0.06878662109375,
+      "eye_size": -0.1292724609375,
+      "jaw_width": 0.1396484375,
+      "complexity": 0.873046875
+    }
+  }
+}

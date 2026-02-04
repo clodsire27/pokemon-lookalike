@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Pokémon Lookalike</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      margin: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      max-width: 320px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>얼굴 사진 업로드</h2>
+
+<input type="file" id="file">
+<button onclick="upload()">매칭</button>
+
+<hr>
+
+<div id="results"></div>
+
+<script>
+async function upload() {
+  const fileInput = document.getElementById("file");
+  if (!fileInput.files.length) {
+    alert("사진을 선택하세요");
+    return;
+  }
+
+  const form = new FormData();
+  form.append("file", fileInput.files[0]);
+
+  const res = await fetch("/match", {
+    method: "POST",
+    body: form
+  });
+
+  const data = await res.json();
+
+  const div = document.getElementById("results");
+  div.innerHTML = "";
+
+  data.results.forEach((r) => {
+    div.innerHTML += `
+      <div class="card">
+        <h3>${r.rank}. ${r.name}</h3>
+        <p><b>Similarity:</b> ${r.final.toFixed(3)}</p>
+        <p><b>Why:</b> ${r.explanation}</p>
+      </div>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>
