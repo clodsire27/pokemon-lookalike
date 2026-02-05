@@ -32,3 +32,10 @@ venv/
 checkpoints/
 *.pt
 *.pth
+
+# =========================
+# README / GitHub assets
+# =========================
+!images/
+!images/github/
+!images/github/*.png
