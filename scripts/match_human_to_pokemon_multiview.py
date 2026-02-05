@@ -10,6 +10,8 @@ from scripts.extract_face_attributes import extract_face_crop
 from scripts.encode_pokemon_multiview import encode_multiview_clip
 from scripts.schema_to_multiview_prompts import schema_to_multiview_prompts
 from scripts.extract_human_geometry_axis import extract_human_geometry_axis
+from scripts.explain_utils import build_geometry_explanation
+
 
 # =========================
 # Config
@@ -24,11 +26,10 @@ THRESHOLD = 0.25
 
 MODEL_NAME = "ViT-B-32"
 PRETRAINED = "openai"
-
 FACE_TEXT = "cute cartoon character face with eyes and mouth"
 
 # =========================
-# Geometry statistics (z-score)
+# Geometry statistics
 # =========================
 STDS = {
     "eye_spacing_ratio": 0.169,
@@ -46,39 +47,44 @@ with open(GEOMETRY_WEIGHT_DB, "r", encoding="utf-8") as f:
 with open(HUMAN_LIKENESS_DB, "r", encoding="utf-8") as f:
     HUMAN_LIKENESS = json.load(f)
 
-# =========================
-# Geometry similarity
-# =========================
-def geometry_similarity(h, p):
-    # --------------------------------------------------
-    # 1️⃣ mouth_width soft gate (완화 버전)
-    # --------------------------------------------------
+# ============================================================
+# Geometry similarity + debug
+# ============================================================
+def geometry_similarity(h, p, return_debug=False):
+    debug = {}
+
+    # ------------------
+    # mouth soft gate
+    # ------------------
     delta_mouth = abs(h["mouth_width_ratio"] - p["mouth_width_ratio"])
 
     if delta_mouth > 0.20:
+        if return_debug:
+            return 0.0, {"mouth": {"delta": delta_mouth, "penalty": 0.0}}
         return 0.0
-    elif delta_mouth > 0.12:
+
+    if delta_mouth > 0.12:
         mouth_penalty = np.exp(-5.0 * (delta_mouth - 0.12))
     else:
         mouth_penalty = 1.0
 
-    # --------------------------------------------------
-    # 2️⃣ weighted geometry similarity
-    # --------------------------------------------------
-    s = 0.0
-    w = 0.0
+    debug["mouth"] = {
+        "delta": delta_mouth,
+        "penalty": mouth_penalty
+    }
+
+    # ------------------
+    # geometry axes
+    # ------------------
+    s, w = 0.0, 0.0
 
     for key, w_key in [
         ("eye_spacing_ratio", "eye_spacing"),
         ("eye_height_ratio",  "eye_height"),
         ("face_aspect_ratio", "face_aspect"),
     ]:
-        if w_key not in WEIGHTS:
-            continue
+        wk = WEIGHTS.get(w_key, 0.0)
 
-        wk = WEIGHTS[w_key]
-
-        # eye_height 과도 지배 방지
         if w_key == "eye_height":
             wk = min(wk, 0.4)
 
@@ -86,29 +92,38 @@ def geometry_similarity(h, p):
             continue
 
         z = abs(h[key] - p[key]) / STDS[key]
-
-        # 🔥 감쇠 완화 (칼 → 저울)
         score = np.exp(-0.7 * z)
-        # 대안: score = 1.0 / (1.0 + z)
+
+        debug[w_key] = {
+            "z": z,
+            "score": score
+        }
 
         s += wk * score
         w += wk
 
-    geo_sim = s / max(w, 1e-6)
+    geo_sim = (s / max(w, 1e-6))
 
-    # --------------------------------------------------
-    # 3️⃣ face_aspect 미세 감점 (soft gate)
-    # --------------------------------------------------
+    # ------------------
+    # face aspect soft penalty
+    # ------------------
     z_face = abs(
         h["face_aspect_ratio"] - p["face_aspect_ratio"]
     ) / STDS["face_aspect_ratio"]
 
-    geo_sim *= np.exp(-0.3 * z_face)
+    face_penalty = np.exp(-0.3 * z_face)
+    geo_sim *= face_penalty
 
-    # --------------------------------------------------
-    # 4️⃣ mouth penalty 적용
-    # --------------------------------------------------
+    debug["face_aspect"] = {
+        "z": z_face,
+        "score": face_penalty
+    }
+
+    # apply mouth penalty
     geo_sim *= mouth_penalty
+
+    if return_debug:
+        return geo_sim, debug
 
     return geo_sim
 
@@ -118,6 +133,7 @@ def geometry_similarity(h, p):
 # =========================
 def final_score(clip_sim, geo_sim):
     return 0.65 * geo_sim + 0.35 * clip_sim
+
 
 # =========================
 # Image embedding
@@ -131,26 +147,27 @@ def encode_image_clip(model, preprocess, image_path, device):
     e = model.encode_image(x)
     return e[0] / e.norm(dim=-1)
 
+
 # ============================================================
-# 🔥 Core function (API / server용)
+# 🔥 Core function (API / CLI 공용)
 # ============================================================
 def run_match(image_path: str):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    # Load CLIP
+    # CLIP
     model, _, preprocess = open_clip.create_model_and_transforms(
         MODEL_NAME, PRETRAINED
     )
     model = model.to(device).eval()
 
-    # Face concept embedding (ROI)
+    # face concept embedding
     with torch.no_grad():
         tokens = open_clip.tokenize([FACE_TEXT]).to(device)
         face_text_emb = model.encode_text(tokens)
         face_text_emb = face_text_emb / face_text_emb.norm(dim=-1, keepdim=True)
         face_text_emb = face_text_emb[0]
 
-    # Load DBs
+    # DBs
     pokemon_emb_db = torch.load(POKEMON_EMB_DB, map_location=device)
     with open(POKEMON_GEO_DB, "r", encoding="utf-8") as f:
         pokemon_geo_db = json.load(f)
@@ -166,7 +183,7 @@ def run_match(image_path: str):
         device=device
     )
 
-    # Human CLIP embedding (semantic)
+    # Human CLIP embedding
     schema = {
         "eye_shape": "neutral",
         "eye_spacing": "neutral",
@@ -180,10 +197,12 @@ def run_match(image_path: str):
     text_emb_h = encode_multiview_clip(model, prompts)
     img_emb_h  = encode_image_clip(model, preprocess, image_path, device)
 
-    human_emb = 0.5 * text_emb_h + 0.5 * img_emb_h
+    human_emb = (0.5 * text_emb_h + 0.5 * img_emb_h)
     human_emb = human_emb / human_emb.norm()
 
+    # ------------------
     # Matching
+    # ------------------
     results = []
 
     for name, p_emb in pokemon_emb_db.items():
@@ -193,8 +212,11 @@ def run_match(image_path: str):
         p_geo = pokemon_geo_db[name]
 
         clip_sim = float(torch.dot(human_emb, p_emb.to(device)))
-        geo_sim  = geometry_similarity(human_geo, p_geo)
-        score    = final_score(clip_sim, geo_sim)
+        geo_sim, geo_debug = geometry_similarity(
+            human_geo, p_geo, return_debug=True
+        )
+
+        score = final_score(clip_sim, geo_sim)
 
         # human likeness gate
         human_like = HUMAN_LIKENESS.get(name, 0.0)
@@ -203,12 +225,17 @@ def run_match(image_path: str):
         elif human_like < -0.02:
             score *= 0.85
 
+        explanation = build_geometry_explanation(
+            human_geo, p_geo, geo_debug
+        )
+
         results.append({
             "name": name,
             "final": float(score),
             "geo": float(geo_sim),
             "clip": float(clip_sim),
             "human": float(human_like),
+            "explanation": explanation
         })
 
     results.sort(key=lambda x: -x["final"])
@@ -218,8 +245,9 @@ def run_match(image_path: str):
         "results": results[:TOPK],
     }
 
+
 # ============================================================
-# CLI wrapper
+# CLI
 # ============================================================
 def cli_main(image_path: str):
     result = run_match(image_path)
@@ -231,14 +259,17 @@ def cli_main(image_path: str):
 
         print(
             f"{i}. {r['name']:<12} "
-            f"final={r['final']:.3f}  "
-            f"geo={r['geo']:.3f}  "
-            f"clip={r['clip']:.3f}  "
+            f"final={r['final']:.3f} "
+            f"geo={r['geo']:.3f} "
+            f"clip={r['clip']:.3f} "
             f"human={r['human']:+.3f}"
         )
+        for line in r["explanation"]["summary"]:
+            print("   -", line)
+
 
 # =========================
-# Entry point
+# Entry
 # =========================
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

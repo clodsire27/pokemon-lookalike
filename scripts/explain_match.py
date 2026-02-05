@@ -10,23 +10,27 @@ def explain_match(
     min_contribution: float = 0.05
 ):
     """
-    human_axis, pokemon_axis: normalized axis dict
-    return: list of explanation dicts
+    human_axis, pokemon_axis:
+        - 이미 0~1 범위로 정규화된 axis dict
+        - 예: {"eye_spacing": 0.7, "mouth": 0.9, ...}
+
+    return:
+        기여도가 높은 축 기준 설명 리스트
     """
 
     contributions = []
 
-    for k, (etype, desc) in AXIS_EXPLANATION.items():
-        if k not in human_axis or k not in pokemon_axis:
+    for axis_key, axis_desc in AXIS_EXPLANATION.items():
+        if axis_key not in human_axis or axis_key not in pokemon_axis:
             continue
 
-        contrib = min(human_axis[k], pokemon_axis[k])
+        contrib = min(human_axis[axis_key], pokemon_axis[axis_key])
         if contrib < min_contribution:
             continue
 
         contributions.append({
-            "type": etype,
-            "description": desc,
+            "type": axis_key,
+            "description": axis_desc,
             "contribution": float(contrib)
         })
 
