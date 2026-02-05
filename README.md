@@ -1,4 +1,5 @@
-!(/home/sea/project/pokemon/images/github/영케나비.png)
+![영케나비](images/github/영케나비.png)
+
 
 # 🐾 Pokémon Lookalike Project
 
