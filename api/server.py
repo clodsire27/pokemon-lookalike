@@ -5,7 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 
-from scripts.match_from_face_clip_hog import run_match
+from scripts.match_human_to_pokemon_multiview import run_match
+
+
 
 BASE_DIR = "/home/sea/project/pokemon"
 
