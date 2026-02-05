@@ -19,7 +19,7 @@ POKEMON_GEO_DB = "data/pokemon_geometry_axis.json"
 GEOMETRY_WEIGHT_DB = "data/geometry_weights.json"
 HUMAN_LIKENESS_DB = "data/pokemon_human_likeness.json"
 
-TOPK = 5
+TOPK = 3
 THRESHOLD = 0.25
 
 MODEL_NAME = "ViT-B-32"
