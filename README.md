@@ -1,3 +1,5 @@
+!(/home/sea/project/pokemon/images/github/영케나비.png)
+
 # 🐾 Pokémon Lookalike Project
 
 A research-oriented fan project that analyzes a human face image and finds the most visually similar Pokémon using **CLIP-based multi-view embeddings**, **axis-based facial attributes**, and **hybrid text–image similarity matching**.
