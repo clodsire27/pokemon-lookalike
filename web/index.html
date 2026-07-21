@@ -27,37 +27,85 @@
 <div id="results"></div>
 
 <script>
-async function upload() {
-  const fileInput = document.getElementById("file");
-  if (!fileInput.files.length) {
-    alert("사진을 선택하세요");
-    return;
+  async function upload() {
+    const fileInput = document.getElementById("file");
+  
+    if (!fileInput.files.length) {
+      alert("사진을 선택하세요");
+      return;
+    }
+  
+    const form = new FormData();
+    form.append("file", fileInput.files[0]);
+  
+    const div = document.getElementById("results");
+    div.innerHTML = "<p>분석 중...</p>";
+  
+    try {
+      const res = await fetch("/match", {
+        method: "POST",
+        body: form
+      });
+  
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(
+          `서버 오류 ${res.status}: ${errorText}`
+        );
+      }
+  
+      const data = await res.json();
+      div.innerHTML = "";
+  
+      data.results.forEach((r, index) => {
+        const summary = Array.isArray(r.explanation?.summary)
+          ? r.explanation.summary
+          : [];
+  
+        const reasonHtml = summary.length
+          ? summary.map((text) => `<li>${text}</li>`).join("")
+          : "<li>세부 설명 없음</li>";
+  
+        div.innerHTML += `
+          <div class="card">
+            <h3>${index + 1}. ${r.name}</h3>
+  
+            <p>
+              <b>최종 유사도:</b>
+              ${Number(r.final).toFixed(3)}
+            </p>
+  
+            <p>
+              <b>얼굴 구조:</b>
+              ${Number(r.geo).toFixed(3)}
+            </p>
+  
+            <p>
+              <b>시각적 인상:</b>
+              ${Number(r.clip).toFixed(3)}
+            </p>
+  
+            <p>
+              <b>표정·성격 인상:</b>
+              ${Number(r.personality ?? 0).toFixed(3)}
+            </p>
+  
+            <p><b>닮은 이유:</b></p>
+            <ul>${reasonHtml}</ul>
+          </div>
+        `;
+      });
+  
+    } catch (error) {
+      div.innerHTML = `
+        <p style="color:red;">
+          매칭 중 오류가 발생했습니다:
+          ${error.message}
+        </p>
+      `;
+    }
   }
-
-  const form = new FormData();
-  form.append("file", fileInput.files[0]);
-
-  const res = await fetch("/match", {
-    method: "POST",
-    body: form
-  });
-
-  const data = await res.json();
-
-  const div = document.getElementById("results");
-  div.innerHTML = "";
-
-  data.results.forEach((r) => {
-    div.innerHTML += `
-      <div class="card">
-        <h3>${r.rank}. ${r.name}</h3>
-        <p><b>Similarity:</b> ${r.final.toFixed(3)}</p>
-        <p><b>Why:</b> ${r.explanation}</p>
-      </div>
-    `;
-  });
-}
-</script>
+  </script>
 
 </body>
 </html>

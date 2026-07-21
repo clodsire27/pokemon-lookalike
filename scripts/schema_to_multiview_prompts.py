@@ -50,10 +50,39 @@ def schema_to_multiview_prompts(schema: dict):
             f"A face with {face_prop} facial proportions."
         )
 
+        personality = schema.get("personality", {})
+
+        expression_parts = []
+
+        if personality.get("smile", 0.0) > 0.35:
+            expression_parts.append("a broad bright smile")
+
+        if personality.get("mouth_open", 0.0) > 0.35:
+            expression_parts.append("an open-mouth smile")
+
+        if personality.get("cheerful", 0.0) > 0.35:
+            expression_parts.append("a cheerful happy expression")
+
+        if personality.get("playful", 0.0) > 0.35:
+            expression_parts.append("a playful mischievous expression")
+
+        if personality.get("energetic", 0.0) > 0.35:
+            expression_parts.append("a lively energetic impression")
+
+        if personality.get("cute", 0.0) > 0.35:
+            expression_parts.append("a cute youthful impression")
+
         prompts["anchor_only"] = (
             f"{eye_shape} eyes, {face_prop} face, "
             "distinct facial impression"
         )
+
+        if expression_parts:
+            prompts["expression_focused"] = (
+                "A face showing "
+                + ", ".join(expression_parts)
+                + "."
+            )
 
         return prompts
 

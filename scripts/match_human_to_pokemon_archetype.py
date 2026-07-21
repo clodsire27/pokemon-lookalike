@@ -2,7 +2,8 @@
 import json
 import argparse
 from pathlib import Path
-
+from scripts.extract_human_axis_clip import extract_human_axis
+from scripts.build_human_schema_from_axis import build_human_schema_from_axis
 from scripts.axis_utils import compress_axis_soft, filter_axis
 from scripts.extract_human_axis_clip import extract_human_axis
 
@@ -126,7 +127,7 @@ def main(image_path: str):
 
         if base < 0.05:
             fb = fallback_score(human_axis, p_axis)
-            final = fb * 0.3 + pen * 0.1   # 🔥 fallback 전용 완화
+            final = fb * 0.3 + pen * 0.1
             reason = []
         else:
             final = base + pen

@@ -1,3 +1,4 @@
+#/home/sea/project/pokemon/scripts/encode_pokemon_multiview.py
 import torch
 import open_clip
 

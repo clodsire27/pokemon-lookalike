@@ -1,3 +1,4 @@
+#/home/sea/project/pokemon/scripts/extract_human_geometry_axis.py
 import cv2
 import numpy as np
 

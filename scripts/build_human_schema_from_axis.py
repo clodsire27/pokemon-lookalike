@@ -83,13 +83,62 @@ def build_human_schema_from_axis(axis: dict):
         "angular": g("jaw_angular", 0),
     })
 
+    schema["personality"]={
+
+        "smile":g("smile",0),
+
+        "energetic":g("energetic",0),
+
+        "playful":g("playful",0),
+
+        "cute":g("cute",0),
+
+        "cool":g("cool",0),
+
+    }
+    
     schema["face_proportion"] = pick_ambiguous_combo({
         "long": g("face_long", 0),
         "short": g("face_short", 0),
     })
 
-    # 🔥 핵심: anchor를 schema에 실제로 넣는다
+    # 핵심: anchor를 schema에 실제로 넣는다
     schema["anchors"] = build_human_anchors(axis)
+
+    # Expression / personality
+    schema["personality"] = {
+        "smile": float(g("expression_smile", 0.0)),
+        "mouth_open": float(g("expression_mouth_open", 0.0)),
+        "cheerful": float(g("expression_cheerful", 0.0)),
+        "playful": float(g("expression_playful", 0.0)),
+        "energetic": float(g("expression_energetic", 0.0)),
+        "cute": float(g("vibe_cute", 0.0)),
+        "cool": float(g("vibe_cool", 0.0)),
+    }
+
+    schema["smile"] = (
+        "big"
+        if g("expression_smile",0)>0.35
+        else "neutral"
+    )
+
+    schema["mouth"] = (
+        "open"
+        if g("expression_mouth_open",0)>0.35
+        else "closed"
+    )
+
+    schema["expression"] = (
+        "cheerful"
+        if g("expression_cheerful",0)>0.35
+        else "neutral"
+    )
+
+    schema["playful"] = (
+        "yes"
+        if g("expression_playful",0)>0.35
+        else "no"
+    )
 
     return schema
 

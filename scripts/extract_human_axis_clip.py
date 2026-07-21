@@ -115,6 +115,64 @@ VIBE_PROMPTS = {
     "vibe_elegant": "elegant impression, graceful",
 }
 
+PERSONALITY_PROMPTS = {
+    "expression_smile": (
+        "a person with a broad bright smile"
+    ),
+    "expression_mouth_open": (
+        "a person smiling with an open mouth"
+    ),
+    "expression_cheerful": (
+        "a person with a cheerful happy expression"
+    ),
+    "expression_playful": (
+        "a person with a playful mischievous expression"
+    ),
+    "expression_energetic": (
+        "a person with a lively energetic expression"
+    ),
+}
+
+PERSONALITY_PROMPTS = {
+
+    "smile":
+        "bright smile, happy smile",
+
+    "energetic":
+        "energetic cheerful person",
+
+    "playful":
+        "playful mischievous expression",
+
+    "cute":
+        "cute innocent face",
+
+    "cool":
+        "cool calm face",
+
+    "gentle":
+        "gentle warm expression",
+
+    "serious":
+        "serious expression",
+
+}
+
+
+EXPRESSION_PROMPTS = {
+    "expression_smile":
+        "big smile, bright smile",
+
+    "expression_mouth_open":
+        "mouth open, laughing",
+
+    "expression_cheerful":
+        "cheerful expression, happy face",
+
+    "expression_playful":
+        "playful expression, mischievous smile",
+}
+
 # =========================
 # Main extraction
 # =========================
@@ -144,16 +202,49 @@ def extract_human_axis(image_path: str) -> dict:
         k: cosine(img_emb, clip_text_embed(v))
         for k, v in VIBE_PROMPTS.items()
     }
+
+    expression_scores = {
+        k: cosine(img_emb, clip_text_embed(v))
+        for k, v in EXPRESSION_PROMPTS.items()
+    }
+
+    expression_axis = softmax_norm(
+        expression_scores,
+        temperature=0.07,
+    )
+
     vibe_axis = softmax_norm(vibe_scores, temperature=0.07)
+    
+    # --- Personality / expression axis (CLIP)
+    personality_scores = {
+        k: cosine(img_emb, clip_text_embed(v))
+        for k, v in PERSONALITY_PROMPTS.items()
+    }
+
+    personality_axis = softmax_norm(
+        personality_scores,
+        temperature=0.10,
+    )
 
     # --- Merge
     axis = {}
     axis.update(eye_axis)
     axis.update(face_axis)
     axis.update(vibe_axis)
+    axis.update(personality_axis)
 
     # 🔥 winner-take-most 압축
-    axis = compress_axis_soft(axis, temperature=0.08)
+    # 눈/얼굴/vibe 축은 기존 압축 유지
+    base_axis = {}
+    base_axis.update(eye_axis)
+    base_axis.update(face_axis)
+    base_axis.update(vibe_axis)
+    base_axis = compress_axis_soft(base_axis, temperature=0.08)
+
+    # expression은 별도 분포로 유지
+    axis = {}
+    axis.update(base_axis)
+    axis.update(personality_axis)
 
     return axis
 
@@ -169,3 +260,4 @@ if __name__ == "__main__":
 
     axis = extract_human_axis(args.image)
     print(json.dumps(axis, indent=2, ensure_ascii=False))
+

@@ -1,3 +1,4 @@
+#/home/sea/project/pokemon/scripts/match_human_to_pokemon_multiview.py
 import os
 import torch
 import argparse
@@ -5,7 +6,8 @@ import open_clip
 import json
 import numpy as np
 from PIL import Image
-
+from scripts.extract_human_axis_clip import extract_human_axis
+from scripts.build_human_schema_from_axis import build_human_schema_from_axis
 from scripts.extract_face_attributes import extract_face_crop
 from scripts.encode_pokemon_multiview import encode_multiview_clip
 from scripts.schema_to_multiview_prompts import schema_to_multiview_prompts
@@ -27,7 +29,15 @@ THRESHOLD = 0.25
 MODEL_NAME = "ViT-B-32"
 PRETRAINED = "openai"
 FACE_TEXT = "cute cartoon character face with eyes and mouth"
-
+PERSONALITY_KEYS = [
+    "smile",
+    "mouth_open",
+    "cheerful",
+    "playful",
+    "energetic",
+    "cute",
+    "cool",
+]
 
 # =========================
 # Geometry statistics
@@ -48,7 +58,12 @@ with open(GEOMETRY_WEIGHT_DB, "r", encoding="utf-8") as f:
 
 with open(HUMAN_LIKENESS_DB, "r", encoding="utf-8") as f:
     HUMAN_LIKENESS = json.load(f)
+with open(
+    "data/pokemon_personality.json",
+    encoding="utf-8"
+) as f:
 
+    PERSONALITY_DB=json.load(f)
 
 # ============================================================
 # Geometry similarity + debug
@@ -56,28 +71,24 @@ with open(HUMAN_LIKENESS_DB, "r", encoding="utf-8") as f:
 def geometry_similarity(h, p, return_debug=False):
     debug = {}
 
-    # --------------------------------------------------
-    # 1️⃣ mouth width soft gate
-    # --------------------------------------------------
-    delta_mouth = abs(h["mouth_width_ratio"] - p["mouth_width_ratio"])
+    delta_mouth = abs(
+        h.get("mouth_width_ratio", 0.0)
+        - p.get("mouth_width_ratio", 0.0)
+    )
 
-    if delta_mouth > 0.20:
-        if return_debug:
-            return 0.0, {
-                "mouth": {"delta": delta_mouth, "penalty": 0.0}
-            }
-        return 0.0
-
-    if delta_mouth > 0.12:
-        mouth_penalty = np.exp(-5.0 * (delta_mouth - 0.12))
+    # 현재 pokemon mouth_width_ratio는 실제 입이 아니라
+    # 하단 실루엣 폭에 가까운 값이므로 강한 gate로 쓰지 않는다.
+    if delta_mouth > 0.50:
+        mouth_penalty = 0.85
+    elif delta_mouth > 0.30:
+        mouth_penalty = 0.92
     else:
         mouth_penalty = 1.0
 
     debug["mouth"] = {
-        "delta": delta_mouth,
-        "penalty": mouth_penalty
+        "delta": float(delta_mouth),
+        "penalty": float(mouth_penalty),
     }
-
     # --------------------------------------------------
     # 2️⃣ weighted geometry axes
     # --------------------------------------------------
@@ -139,8 +150,16 @@ def geometry_similarity(h, p, return_debug=False):
 # =========================
 # Final score
 # =========================
-def final_score(clip_sim, geo_sim):
-    return 0.65 * geo_sim + 0.35 * clip_sim
+def final_score(
+    clip_sim: float,
+    geo_sim: float,
+    personality_sim: float,
+) -> float:
+    return (
+        0.20 * geo_sim
+        + 0.45 * clip_sim
+        + 0.35 * personality_sim
+    )
 
 
 # =========================
@@ -200,20 +219,31 @@ def run_match(image_path: str):
     # -------------------------
     # Human CLIP embedding (semantic)
     # -------------------------
-    schema = {
-        "eye_shape": "neutral",
-        "eye_spacing": "neutral",
-        "eye_height": "neutral",
-        "mouth_size": "neutral",
-        "jaw_shape": "neutral",
-        "face_proportion": "neutral",
-    }
+    # 실제 사람 얼굴 axis 추출
+    human_axis = extract_human_axis(image_path)
 
+    human_axis = extract_human_axis(image_path)
+    human_personality = build_human_personality(human_axis)
+
+    # axis를 실제 schema로 변환
+    schema = build_human_schema_from_axis(human_axis)
+
+    # 실제 얼굴 특성을 반영한 prompt 생성
     prompts = schema_to_multiview_prompts(schema)
-    text_emb_h = encode_multiview_clip(model, prompts)
-    img_emb_h  = encode_image_clip(model, preprocess, image_path, device)
 
-    human_emb = 0.5 * text_emb_h + 0.5 * img_emb_h
+    text_emb_h = encode_multiview_clip(model, prompts)
+    img_emb_h = encode_image_clip(
+        model,
+        preprocess,
+        image_path,
+        device,
+    )
+
+    # 이미지 비중을 조금 더 크게 사용
+    human_emb = (
+        0.35 * text_emb_h
+        + 0.65 * img_emb_h
+    )
     human_emb = human_emb / human_emb.norm()
 
     # -------------------------
@@ -226,27 +256,39 @@ def run_match(image_path: str):
             continue
 
         p_geo = pokemon_geo_db[name]
+        p_personality = PERSONALITY_DB.get(name, {})
+
+        personality_sim = personality_similarity(
+            human_personality,
+            p_personality,
+        )
 
         clip_sim = float(torch.dot(human_emb, p_emb.to(device)))
         geo_sim, geo_debug = geometry_similarity(
             human_geo, p_geo, return_debug=True
         )
 
-        score = final_score(clip_sim, geo_sim)
+        score = final_score(
+            clip_sim,
+            geo_sim,
+            personality_sim,
+        )
 
-        if geo_sim < 0.25 and clip_sim > 0.82:
-            perceptual_bonus = 0.06
+        if geo_sim < 0.25 and clip_sim > 0.80:
+            perceptual_bonus = 0.10
+        elif clip_sim > 0.83:
+            perceptual_bonus = 0.05
         else:
             perceptual_bonus = 0.0
 
         score += perceptual_bonus
 
-        # human likeness gate (종 특성 보정)
         human_like = HUMAN_LIKENESS.get(name, 0.0)
-        if human_like < -0.03:
-            score *= 0.6
-        elif human_like < -0.01:
+
+        if human_like < -0.05:
             score *= 0.85
+        elif human_like < -0.03:
+            score *= 0.93
 
         explanation = build_geometry_explanation(
             human_geo, p_geo, geo_debug
@@ -257,8 +299,9 @@ def run_match(image_path: str):
             "final": float(score),
             "geo": float(geo_sim),
             "clip": float(clip_sim),
+            "personality": float(personality_sim),
             "human": float(human_like),
-            "explanation": explanation
+            "explanation": explanation,
         })
 
     results.sort(key=lambda x: -x["final"])
@@ -285,12 +328,58 @@ def cli_main(image_path: str):
             f"final={r['final']:.3f} "
             f"geo={r['geo']:.3f} "
             f"clip={r['clip']:.3f} "
+            f"personality={r['personality']:.3f} "
             f"human={r['human']:+.3f}"
         )
         for line in r["explanation"]["summary"]:
             print("   -", line)
 
+def build_human_personality(human_axis: dict) -> dict:
+    return {
+        "smile": float(
+            human_axis.get("expression_smile", 0.0)
+        ),
+        "mouth_open": float(
+            human_axis.get("expression_mouth_open", 0.0)
+        ),
+        "cheerful": float(
+            human_axis.get("expression_cheerful", 0.0)
+        ),
+        "playful": float(
+            human_axis.get("expression_playful", 0.0)
+        ),
+        "energetic": float(
+            human_axis.get("expression_energetic", 0.0)
+        ),
+        "cute": float(
+            human_axis.get("vibe_cute", 0.0)
+        ),
+        "cool": float(
+            human_axis.get("vibe_cool", 0.0)
+        ),
+    }
 
+
+def personality_similarity(h: dict, p: dict) -> float:
+    if not p:
+        return 0.5
+
+    scores = []
+
+    for key in PERSONALITY_KEYS:
+        if key not in p:
+            continue
+
+        hv = float(h.get(key, 0.0))
+        pv = float(p.get(key, 0.0))
+
+        score = np.exp(-2.5 * abs(hv - pv))
+        scores.append(score)
+
+    if not scores:
+        return 0.5
+
+    return float(np.mean(scores))
 # =========================
 # Entry
 # =========================

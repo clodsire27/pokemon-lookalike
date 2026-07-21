@@ -1,3 +1,4 @@
+#/home/sea/project/pokemon/scripts/build_pokemon_attributes_axis.py
 import os, json, torch, clip
 from PIL import Image
 import numpy as np
